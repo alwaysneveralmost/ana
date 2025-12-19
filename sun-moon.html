@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>alwaysneveralmost</title>
+    <meta name="description" content="All cotton classic alwaysneveralmost t-shirt with screen printed Sun/Moon graphic. Original artwork by ANA.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo" onclick="window.location.href='index.html'">alwaysneveralmost</div>
+            <div class="cart-icon">
+                <a href="#" onclick="openCart(); return false;" aria-label="Shopping cart">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Product Detail Section -->
+    <section class="product-detail">
+        <div class="product-grid">
+            <!-- Thumbnail Gallery (Left Side) -->
+            <div class="product-thumbnails">
+                <img src="assets/images/sun_moon.JPG" alt="Sun/Moon T-shirt front" class="product-thumbnail active" onclick="changeProductImage('assets/images/sun_moon.JPG', this)">
+                <img src="assets/images/sun_moon_2.jpg" alt="Sun/Moon T-shirt detail" class="product-thumbnail" onclick="changeProductImage('assets/images/sun_moon_2.jpg', this)">
+                <img src="assets/images/sun_moon_3.jpg" alt="Sun/Moon T-shirt mockup" class="product-thumbnail" onclick="changeProductImage('assets/images/sun_moon_3.jpg', this)">
+            </div>
+
+            <!-- Product Image -->
+            <div class="product-image-container">
+                <img src="assets/images/sun_moon.JPG" alt="Sun/Moon T-shirt" class="product-main-image" id="mainProductImage">
+            </div>
+
+            <!-- Product Title and Price -->
+            <div>
+                <p class="price-below-image">$45</p>
+            </div>
+
+            <!-- Product Info Section -->
+            <div class="product-info-section">
+                <div class="product-description">
+                    <p>All cotton classic alwaysneveralmost t-shirt with screen printed graphic on the front and side pocket. Original artwork by ANA.</p>
+                </div>
+
+                <!-- Product Features -->
+                <div class="product-features">
+                    <p class="features-title">Product Description</p>
+                    <ul class="features-list">
+                        <li>Screen Printed</li>
+                        <li>100% Cotton</li>
+                        <li>Hand Tailored</li>
+                        <li>Side Pocket</li>
+                    </ul>
+                </div>
+
+                <!-- Size Selection -->
+                <div class="size-selector">
+                    <div class="size-header">
+                        <p class="size-label">Size</p>
+                        <p class="size-guide-link" onclick="openSizeGuide()">Size Guide</p>
+                    </div>
+                    <div class="size-options">
+                        <button class="size-option" onclick="selectSize(this)">S</button>
+                        <button class="size-option selected" onclick="selectSize(this)">M</button>
+                        <button class="size-option" onclick="selectSize(this)">L</button>
+                    </div>
+                </div>
+
+                <!-- Add to Cart Button -->
+                <button class="add-to-cart-btn" onclick="addToCart()">Place in Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Size Guide Modal -->
+    <div class="modal-overlay" id="sizeGuideModal" onclick="closeSizeGuide()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2 class="modal-title">Size Guide</h2>
+                <div class="modal-close" onclick="closeSizeGuide()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </div>
+            </div>
+            
+            <p class="modal-subtitle">Measurements in INCHES</p>
+            
+            <div style="overflow-x: auto;">
+                <table class="size-table">
+                    <thead>
+                        <tr>
+                            <th>SIZE</th>
+                            <th>CHEST LENGTH</th>
+                            <th>SLEEVE LENGTH</th>
+                            <th>TOTAL LENGTH</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>S</td>
+                            <td>21"</td>
+                            <td>8"</td>
+                            <td>27"</td>
+                        </tr>
+                        <tr>
+                            <td>M</td>
+                            <td>22"</td>
+                            <td>8.5"</td>
+                            <td>27"</td>
+                        </tr>
+                        <tr>
+                            <td>L</td>
+                            <td>23"</td>
+                            <td>9"</td>
+                            <td>28.5"</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <a href="https://www.instagram.com/alwaysneveralmost/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+            </a>
+            <a href="index.html" class="copyright" style="text-decoration: none; cursor: pointer;">&copy; 2025 ALWAYS NEVER ALMOST</a>
+            <div class="footer-links">
+                <a href="privacy.html" class="footer-link">Privacy Policy</a>
+                <a href="shipping.html" class="footer-link">Shipping Policy</a>
+                <a href="return.html" class="footer-link">Return Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Drawer -->
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-drawer-content">
+            <div class="cart-drawer-header">
+                <h2>Your Cart</h2>
+                <div class="cart-close" onclick="closeCartDrawer()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </div>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <p class="empty-cart-message">Your cart is empty</p>
+            </div>
+            <div class="cart-footer" id="cartFooter" style="display: none;">
+                <div class="cart-total">
+                    <span>Subtotal:</span>
+                    <span id="cartTotal">$0.00</span>
+                </div>
+                <button class="checkout-btn" onclick="goToCheckout()">Checkout</button>
+                <button class="continue-shopping-btn" onclick="closeCartDrawer()">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay" onclick="closeCartDrawer()"></div>
+
+    <!-- Image Lightbox -->
+    <div class="image-lightbox" id="imageLightbox" onclick="closeImageLightbox()">
+        <div class="lightbox-close" onclick="closeImageLightbox()">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </div>
+        <div class="lightbox-arrow lightbox-arrow-left" onclick="previousLightboxImage(); event.stopPropagation()">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </div>
+        <div class="lightbox-arrow lightbox-arrow-right" onclick="nextLightboxImage(); event.stopPropagation()">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </div>
+        <img src="" alt="Product Image Fullscreen" id="lightboxImage" onclick="closeImageLightbox(); event.stopPropagation()">
+    </div>
+
+    <script src="main.js"></script>
+    <script>
+        // Auto-scroll to product image on page load
+        window.addEventListener('load', () => {
+            const productImage = document.querySelector('.product-image-section');
+            if (productImage) {
+                productImage.scrollIntoView({ 
+                    behavior: 'instant',
+                    block: 'start'
+                });
+            }
+        });
+        
+        // Add click handler to main product image for lightbox
+        const mainProductImage = document.getElementById('mainProductImage');
+        if (mainProductImage) {
+            mainProductImage.addEventListener('click', function() {
+                openImageLightbox(this.src);
+            });
+        }
+    </script>
+</body>
+</html>
